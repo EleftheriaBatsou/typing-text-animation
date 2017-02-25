@@ -1,0 +1,48 @@
+<html>
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<script>
+
+var myString = "Place your string data here, and as much as you like. The animation is coming from Javascript! ";
+var myArray = myString.split("");
+var loopTimer;
+function frameLooper() {
+	if(myArray.length > 0) {
+		document.getElementById("myTypingText").innerHTML += myArray.shift();
+	} else {
+		clearTimeout(loopTimer); 
+                return false;
+	}
+	loopTimer = setTimeout('frameLooper()',70);
+}
+frameLooper();
+
+</script>
+
+
+</head>
+<body>
+  
+  <div id="title" class="text-center">
+    <h2>Typing Text Animation</h2>
+    <h4></h4>
+    <h5></h5>
+  </div>
+  
+  <div class="box">
+    <div class="calc">
+      <div id="myTypingText"></div>
+    </div>
+  </div>
+  
+  <div class="row text-center"> <!-- for footer -->
+      <h5><a href="http://www.eleftheriabatsou.com" target="_blank">Eleftheria Batsou</a> | <a href="http://codepen.io/EleftheriaBatsou" target="_blank">Projects</a></h5>
+    </div> <!-- end footer -->
+  
+</body>
+</html>
